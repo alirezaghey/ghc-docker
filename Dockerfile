@@ -21,3 +21,9 @@ RUN dnf -y update && \
             diffutils \
             python3-sphinx
 
+
+RUN useradd -m -d /home/ghc -s /bin/bash ghc
+ENV HOME /home/ghc
+WORKDIR /home/ghc
+USER ghc
+
